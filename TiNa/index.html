@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tran TiNa</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* CSS Riêng cho trang chủ */
+        .hero-new {
+            display: flex;
+            align-items: center;
+            padding: 100px 0;
+            background-color: var(--color-pastel-blue); 
+            min-height: 80vh;
+        }
+        .hero-content {
+            flex: 1;
+            padding-right: 50px;
+        }
+        .hero-image-container {
+            flex: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+        .hero-image-container img {
+            width: 85%;
+            max-width: 450px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 60% 40% 30% 70% / 60% 50% 70% 40%;
+            box-shadow: 10px 10px 0 var(--color-pastel-pink), 20px 20px 0 var(--color-dark-purple); /* Box-shadow kép */
+        }
+        .hero-content h1 {
+            font-family: var(--font-primary);
+            font-size: 2.3rem;
+            font-weight: 700;
+            font-family:var(--font-secondary);
+            background: linear-gradient(45deg, var(--color-dark-purple), var(--color-pastel-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: var(--color-dark-purple);
+            margin: 10px 0 20px 0;
+        }
+        .hero-content h3 {
+            font-family: var(--font-secondary);
+            font-size: 3.5rem;
+            line-height: 1.1;
+            color: var(--color-dark-purple);
+            margin-bottom: 15px;
+        }
+        .hero-content .tagline {
+            font-style: italic;
+            color: var(--color-text-dark);
+            margin-bottom: 30px;
+        }
+        .stats-grid-new {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 50px;
+            padding: 30px 0;
+            text-align: center;
+        }
+        .stat-item-new {
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .stat-item-new h3 {
+            color: var(--color-pastel-pink);
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+        .stat-item-new p {
+            font-size: 0.9rem;
+            color: #6a6a6a;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0;">
+            <h1 class="logo"><a href="index.html">My Vibe</a></h1> 
+            <nav class="main-nav" id="nav-menu">
+                <ul>
+                    <li><a href="index.html" class="active">Trang Chủ</a></li>
+                    <li><a href="about.html">Giới Thiệu</a></li>
+                    <li><a href="portfolio.html">Dự Án</a></li>
+                    <li><a href="contact.html">Liên Hệ</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="mobile-menu"><i class="fas fa-heart"></i></button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-new">
+            <div class="container" style="display: flex; align-items: center;">
+                <div class="hero-content">
+                    <p class="greeting" style="color: var(--color-dark-purple); font-weight: 600; font-family:'Courier New', Courier, monospace; font-size: 30px;">Hello World, I'm</p>
+                    <h1>Tran TiNa</h1>
+                    <p class="tagline">Tôi đam mê tạo ra những nhân vật có hồn và đảm bảo trải nghiệm người dùng hoàn hảo đến từng pixel.</p>
+                    
+                    <div class="actions" style="margin-top: 40px;">
+                        <a href="portfolio.html" class="btn btn-secondary">Xem Dự Án Của Tui →</a>
+                    </div>
+                </div>
+                <div class="hero-image-container">
+                    <img src="img/avt2.jpg" alt="Ảnh đại diện Gen Z">
+                </div>
+            </div>
+        </section>
+        
+        <div class="container stats-grid-new">
+            <div class="stat-item-new"><h3>Định hướng</h3><p>Character Designer, Game Tester</p></div>
+            <div class="stat-item-new"><h3>Cơ hội</h3><p>Mong muốn vào một công ty game lớn để phát triển mảng đồ hoạ của bản thân.</p></div>
+            <div class="stat-item-new"><h3>Môi trường</h3><p>Tận tâm & Năng lượng Gen Z</p></div>
+        </div>
+        
+        <section class="section-pink-bg" style="padding: 30px 0; text-align: center;">
+            <div class="container">
+                <!-- <h2 style="color: var(--color-text-dark);">Let's make some magic together! ✨</h2> -->
+                <a href="contact.html" class="btn btn-primary" style="margin-top: 20px;">Hợp Tác Ngay!</a>
+            </div>
+        </section>
+        
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Trần TiNa. Send you a big heart.</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

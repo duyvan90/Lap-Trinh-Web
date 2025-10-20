@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dự Án</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* CSS Riêng cho trang Dự Án */
+        :root {
+    --color-pastel-pink: #FFB3C1; /* Hồng Pastel */
+    --color-pastel-blue: #A2D2FF; /* Xanh Dương Pastel */
+    --color-pastel-mint: #B9FBC0; /* Xanh Mint */
+    --color-dark-purple: #3A0CA3; /* Màu nhấn chính (cho chữ/icon) */
+    --color-text-dark: #1F1F1F;
+    --color-text-light: #F0F0F0;
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Comfortaa', cursive; /* Font Gen Z, hiện đại hơn */
+}
+        .portfolio-grid-new {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            padding: 50px 0;
+        }
+        .project-card-new {
+            background-color: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.4s ease-in-out;
+            border: 3px solid var(--color-pastel-blue);
+            transform: rotate(-1deg); /* Hiệu ứng nghiêng nhẹ */
+        }
+        .project-card-new:nth-child(even) {
+            transform: rotate(2deg);
+            border-color: var(--color-pastel-pink);
+        }
+        .project-card-new:hover {
+            transform: scale(1.05) rotate(0deg); /* Khi hover đứng thẳng */
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        .project-card-new img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .project-content-new {
+            padding: 25px;
+        }
+        .project-content-new h3 {
+            font-family: var(--font-secondary);
+            color: var(--color-dark-purple);
+            margin-bottom: 10px;
+        }
+        .project-link {
+            color: var(--color-pastel-pink);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        /* CSS MỚI: Sắp xếp ảnh và tiêu đề */
+        .header-project-container {
+            display: flex; /* Bật Flexbox để căn hàng ngang */
+            align-items: center; /* Căn giữa theo chiều dọc */
+            padding-top: 50px;
+            margin-bottom: 20px;
+            justify-content: center; /* Căn giữa toàn bộ cụm ảnh+tiêu đề */
+            text-align: left; /* Đảm bảo tiêu đề không bị căn giữa */
+        }
+        
+        .header-project-container h2 {
+            font-family: var(--font-secondary);
+            font-size: 2.5rem; /* Giảm cỡ chữ để cân đối */
+            color: var(--color-dark-purple);
+            padding-top: 0; /* Bỏ padding-top không cần thiết */
+            text-align: left; /* Căn trái cho tiêu đề */
+            margin-left: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-image-container { /* Điều chỉnh container ảnh */
+            width: 120px; /* Chiều rộng nhỏ */
+            height: 120px; /* Chiều cao nhỏ */
+            /* Bỏ các thuộc tính Flexbox cũ */
+            position: relative; 
+            display: block; 
+            flex: none; /* Giữ nguyên kích thước */
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: 100%;
+            /* Thay đổi hình dạng elip để khớp với ảnh gốc của bạn */
+            border-radius: 50%; /* Dùng hình tròn để đơn giản */
+            box-shadow: 5px 5px 0 var(--color-pastel-pink), 10px 10px 0 var(--color-dark-purple);
+            transform: rotate(-5deg); /* Nghiêng nhẹ */
+        }
+
+        /* Điều chỉnh cho màn hình nhỏ hơn */
+        @media (max-width: 600px) {
+            .header-project-container {
+                flex-direction: column; /* Xếp dọc trên mobile */
+                text-align: center;
+            }
+            .header-project-container h2 {
+                font-size: 2rem;
+                margin-top: 15px;
+                margin-left: 0;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0;">
+            <h1 class="logo"><a href="index.html">My Vibe</a></h1>
+            <nav class="main-nav" id="nav-menu">
+                <ul>
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li><a href="about.html">Giới Thiệu</a></li>
+                    <li><a href="portfolio.html" class="active">Dự Án</a></li>
+                    <li><a href="contact.html">Liên Hệ</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-heart"></i>
+            </button>
+        </div>
+    </header>
+    <main>
+        <section id="portfolio" class="section-mint-bg">
+            <div class="container">
+                <div class="header-project-container">
+                    <div class="hero-image-container">
+                        <img src="img/avt3.jpg" alt="Ảnh đại diện Gen Z">
+                    </div>
+                    <h2 class="section-title">Các Dự Án</h2>
+                </div>
+                <div class="portfolio-grid-new">
+                    
+                    <div class="project-card-new">
+                        <img src="img/caro.JPG" alt="Dự án Game Caro">
+                        <div class="project-content-new">
+                            <h3>Thiết kế Game Caro</h3>
+                            <p>Dựa vào khả năng tư duy của mỗi người để thắng đối thủ.</p>
+                            <a class="project-link" target="_blank">Đã hoàn thành</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card-new">
+                        <img src="img/caKoi.JPG" alt="Dự án cá Koi">
+                        <div class="project-content-new">
+                            <h3>Tư vấn cá Koi phong thuỷ</h3>
+                            <p>Xây dựng webssite tư vấn cho khách hàng về phong thuỷ để chọn cá Koi dựa trên ngày tháng năm sinh của khách hàng.</p>
+                            <a class="project-link" target="_blank">Đã hoàn thành</a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card-new">
+                        <img src="img/chungkhoan.JPG" alt="Dự án chứng khoán">
+                        <div class="project-content-new">
+                            <h3>Chứng khoán</h3>
+                            <p>Thiết kế website xem chứng khoán theo từng công ty.</p>
+                            <a class="project-link" target="_blank">Đã hoàn thành</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Trần TiNa. Send you a big heart.</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
