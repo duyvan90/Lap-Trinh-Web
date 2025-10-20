@@ -1,0 +1,429 @@
+/* --- CÀI ĐẶT CHUNG (Chủ đề Đỏ & Đen) --- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    scroll-padding-top: 70px; 
+    scroll-behavior: smooth; 
+
+    background-image: url('1.jpg'); 
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    
+    color: #f4f4f4; 
+}
+
+/* Giảm độ mờ lớp phủ chính */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(18, 18, 18, 0.5); 
+    z-index: -1; 
+}
+
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    color: #ffffff; 
+    font-weight: 600;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    border-bottom: 3px solid #e74c3c; 
+    padding-bottom: 10px;
+    display: inline-block; 
+}
+
+section {
+    padding: 60px 0;
+    text-align: center; 
+    background-color: transparent; 
+    position: relative; 
+    overflow: hidden; 
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(18, 18, 18, 0.8); 
+    z-index: -1; 
+}
+
+
+/* --- 1. THANH ĐIỀU HƯỚNG (NAVBAR) --- */
+.navbar {
+    background-color: rgba(30, 30, 30, 0.9); 
+    border-bottom: 1px solid #333;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.navbar .logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #e74c3c; 
+    text-decoration: none;
+}
+
+.navbar nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center; 
+}
+
+.navbar nav li {
+    margin-left: 20px;
+}
+
+.navbar nav a {
+    text-decoration: none;
+    color: #f4f4f4; 
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    display: inline-block; 
+}
+
+/* Hover chung cho TẤT CẢ link trên navbar */
+.navbar nav a:hover {
+    background-color: #e74c3c; 
+    color: #ffffff;
+    animation: bounce-once 0.6s ease; 
+}
+
+/* --- STYLE CHO LINK ĐANG "ACTIVE" --- */
+.navbar nav a.navbar-active {
+    background-color: #e74c3c; /* Nền đỏ */
+    color: #ffffff; /* Chữ trắng */
+}
+
+
+/* --- NÚT TẢI CV TRÊN NAVBAR --- */
+.navbar .cv-button {
+    background-color: transparent; 
+    color: #f4f4f4; 
+    border: none; 
+    padding: 5px 10px; 
+}
+
+
+/* --- NÚT BẤM CHUNG (CALL TO ACTION) --- */
+.cta-button {
+    display: inline-block;
+    background-color: #e74c3c; 
+    color: #ffffff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s; 
+}
+
+.cta-button:hover {
+    background-color: #c0392b; 
+    animation: bounce-once 0.6s ease; 
+}
+
+/* --- 2. PHẦN TRANG CHỦ (HERO) --- */
+.hero {
+    background-color: transparent; 
+    min-height: 80vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 70px; 
+}
+
+/* Style cho ảnh Avatar */
+.hero-content .avatar {
+    width: 200px; 
+    height: 200px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 5px solid #e74c3c; 
+    margin-bottom: 20px; 
+    box-shadow: 0 0 15px rgba(231, 76, 60, 0.7); 
+}
+
+
+.hero-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.hero-content .subtitle {
+    font-size: 1.8em;
+    color: #e74c3c; 
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.hero-content .description {
+    font-size: 1.1em;
+    color: #cccccc; 
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+/* --- 3. PHẦN GIỚI THIỆU (ABOUT) - CÓ ẢNH NỀN RIÊNG --- */
+.about {
+    background-image: url('2.jpg'); 
+    background-size: cover; 
+    background-position: center;
+    background-attachment: fixed; 
+}
+.about::before {
+    background-color: rgba(18, 18, 18, 0.85); 
+}
+
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 40px; 
+    text-align: left; 
+}
+
+.about-text, .about-education {
+    flex: 1; 
+    min-width: 300px; 
+    background-color: rgba(30, 30, 30, 0.8); 
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.about-text h3, .about-education h3 {
+    font-size: 1.5em;
+    color: #e74c3c; 
+    border-bottom: 2px solid #444;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.education-item h4 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+/* --- 4. PHẦN KỸ NĂNG (SKILLS) - CÓ ẢNH NỀN RIÊNG --- */
+.skills {
+    background-image: url('3.jpg'); 
+    background-size: cover; 
+    background-position: center;
+    background-attachment: fixed;
+}
+.skills::before {
+    background-color: rgba(18, 18, 18, 0.85);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+    text-align: left;
+}
+
+.skill-card {
+    background-color: rgba(40, 40, 40, 0.9); 
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+.skill-card i {
+    font-size: 2.5em;
+    color: #e74c3c; 
+    margin-bottom: 15px;
+}
+
+.skill-card h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    color: #cccccc; 
+}
+
+
+/* --- CSS CHO THANH KỸ NĂNG --- */
+.skill-bar-container {
+    background-color: #555; 
+    border-radius: 5px;
+    height: 10px; 
+    margin-top: 25px; 
+    position: relative; 
+    width: 100%;
+}
+
+.skill-bar {
+    background-color: #e74c3c; 
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.8s ease-in-out; 
+}
+
+.skill-percentage {
+    position: absolute;
+    right: 0; 
+    top: -20px; 
+    font-size: 0.9em;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* --- 5. PHẦN DỰ ÁN (PROJECTS) - CÓ ẢNH NỀN RIÊNG --- */
+.projects {
+    background-image: url('4.jpg'); 
+    background-size: cover; 
+    background-position: center;
+    background-attachment: fixed;
+}
+.projects::before {
+    background-color: rgba(18, 18, 18, 0.85);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.project-card {
+    background-color: rgba(40, 40, 40, 0.9); 
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    overflow: hidden; 
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.project-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; 
+}
+
+.project-info {
+    padding: 25px;
+}
+
+.project-info h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.project-info p {
+    margin-bottom: 20px;
+    color: #cccccc;
+}
+
+/* --- 6. PHẦN LIÊN HỆ (CONTACT) - CÓ ẢNH NỀN RIÊNG --- */
+.contact {
+    background-image: url('5.jpg'); 
+    background-size: cover; 
+    background-position: center;
+    background-attachment: fixed;
+}
+.contact::before {
+    background-color: rgba(18, 18, 18, 0.85);
+}
+
+.contact-info {
+    margin: 30px 0;
+    font-size: 1.2em;
+}
+
+.contact-info p {
+    margin: 10px 0;
+}
+
+/* Icon lá thư và điện thoại màu trắng */
+.contact-info i {
+    margin-right: 10px;
+    color: #ffffff; 
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    font-size: 2.5em;
+    color: #cccccc; 
+    margin: 0 15px;
+    transition: color 0.3s; 
+    display: inline-block; 
+}
+
+.social-links a:hover {
+    color: #e74c3c; 
+    animation: bounce-once 0.6s ease; 
+}
+
+/* --- 7. FOOTER --- */
+.footer {
+    background-color: #000000; 
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    /* (ĐÃ CẬP NHẬT) Loại bỏ margin-top để footer liền mạch với section contact */
+    margin-top: 0; 
+}
+
+/* --- KEYFRAME CHO HIỆU ỨNG NẢY LÊN --- */
+@keyframes bounce-once {
+    0%   { transform: translateY(0); }
+    40%  { transform: translateY(-6px); } 
+    60%  { transform: translateY(0px); }  
+    80%  { transform: translateY(-2px); } 
+    100% { transform: translateY(0); }  
+}
