@@ -3,18 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Phan Thành Đức Nhân</title>
+    <title>Portfolio - Phan Thành Đức Nhân | Sinh viên năm 3 CNTT</title>
     <link rel="stylesheet" href="CV.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">PTDN</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Trang chủ</a></li>
+                <li><a href="#about" class="nav-link">Giới thiệu</a></li>
+                <li><a href="#projects" class="nav-link">Dự án</a></li>
+                <li><a href="#skills" class="nav-link">Kỹ năng</a></li>
+                <li><a href="#contact" class="nav-link">Liên hệ</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Xin chào, tôi là <span class="highlight">Phan Thành Đức Nhân</span></h1>
+                    <h2 class="hero-subtitle">Sinh viên năm 3 CNTT & Lập trình viên Full-Stack tiềm năng</h2>
+                    <p class="hero-description">
+                        Đam mê tạo ra những giải pháp sáng tạo thông qua lập trình. Hiện đang theo học Cử nhân CNTT 
+                        với trọng tâm phát triển web, ứng dụng di động và kỹ thuật phần mềm.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">Xem dự án của tôi</a>
+                        <a href="#contact" class="btn btn-secondary">Liên hệ</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-gallery">
+                        <div class="image-container main-image">
+                            <img src="imageCV.jpg" alt="Phan Thành Đức Nhân">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="image-container secondary-image">
+                            <img src="imageCV2.jpg" alt="Phan Thành Đức Nhân">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="image-container secondary-image">
+                            <img src="imageCV3.jpg" alt="Phan Thành Đức Nhân">
+                            <div class="image-overlay"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-arrow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Banner -->
+    <section class="portfolio-banner">
+        <div class="container">
+            <div class="banner-grid">
+                <div class="banner-card">
+                    <div class="banner-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Lập trình viên</h3>
+                    <p>3+ năm kinh nghiệm phát triển phần mềm</p>
+                </div>
+                <div class="banner-card">
+                    <div class="banner-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>Âm nhạc</h3>
+                    <p>Yêu thích nghe nhạc khi code và học tập</p>
+                </div>
+                <div class="banner-card">
+                    <div class="banner-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Ngôn ngữ</h3>
+                    <p>Đang học tiếng Nhật hoặc tiếng Trung</p>
+                </div>
+                <div class="banner-card">
+                    <div class="banner-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Đổi mới</h3>
+                    <p>Luôn tìm hiểu công nghệ mới</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
     <div class="container">
-        <!-- Left Sidebar -->
-        <aside class="sidebar">
-            <!-- Contact Section -->
-            <section class="contact-section">
-                <h3 class="sidebar-title">CONTACT</h3>
+            <div class="section-header">
+                <h2 class="section-title">Giới thiệu về tôi</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Tôi là sinh viên năm 3 ngành CNTT tại Đại học GTVT TP.HCM với GPA 3.0, 
+                        chuyên về phát triển phần mềm và công nghệ web. Hành trình lập trình của tôi 
+                        bắt đầu với C++ từ 3 năm trước, và tôi đã mở rộng kiến thức để bao gồm Java, 
+                        PHP và các công nghệ web hiện đại.
+                    </p>
+                    <p>
+                        Ngoài lập trình, tôi cũng rất quan tâm đến văn hóa và ngôn ngữ của Nhật Bản và Trung Quốc. 
+                        Tôi đang cân nhắc học một trong hai ngôn ngữ này để mở rộng cơ hội nghề nghiệp và 
+                        hiểu biết về các thị trường công nghệ lớn ở châu Á.
+                    </p>
+                    <p>
+                        Khi code và học tập, tôi thường nghe nhạc để tạo cảm hứng và tập trung tốt hơn. 
+                        Âm nhạc giúp tôi thư giãn và có những ý tưởng sáng tạo trong quá trình phát triển phần mềm.
+                    </p>
+                    <p>
+                        Điều thúc đẩy tôi là khả năng vô tận của việc tạo ra những giải pháp có ý nghĩa. 
+                        Dù là xây dựng ứng dụng di động cho các doanh nghiệp địa phương hay phát triển 
+                        nền tảng web giúp mọi người học kỹ năng mới, tôi đam mê sử dụng công nghệ để giải quyết 
+                        các vấn đề thực tế.
+                    </p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label">Năm lập trình</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Dự án hoàn thành</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">3.0</span>
+                            <span class="stat-label">Điểm GPA</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-sidebar">
+                    <div class="contact-card">
+                        <h3>Thông tin liên hệ</h3>
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
                     <span>toritori.wok@gmail.com</span>
@@ -30,208 +168,538 @@
                 <div class="contact-item">
                     <i class="fab fa-github"></i>
                     <a href="https://github.com/ToriToriisme" target="_blank">github.com/ToriToriisme</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
                 </div>
             </section>
 
             <!-- Skills Section -->
-            <section class="skills-section">
-                <h3 class="sidebar-title">SKILLS</h3>
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Kỹ năng</h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <!-- Traditional Skills Grid -->
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Ngôn ngữ lập trình</h3>
+                    <div class="skill-items">
                             <div class="skill-item">
-                                <span class="skill-name">C++</span>
+                            <span class="skill-name">C++ (3 năm)</span>
                                 <div class="skill-bar">
                         <div class="skill-progress" style="width: 90%"></div>
                                 </div>
                             </div>
                             <div class="skill-item">
-                                <span class="skill-name">Java</span>
+                            <span class="skill-name">Java (1 năm)</span>
                                 <div class="skill-bar">
                         <div class="skill-progress" style="width: 70%"></div>
                                 </div>
                             </div>
                             <div class="skill-item">
-                                <span class="skill-name">PHP</span>
+                            <span class="skill-name">PHP (1 năm)</span>
                                 <div class="skill-bar">
                         <div class="skill-progress" style="width: 60%"></div>
                     </div>
                 </div>
                             <div class="skill-item">
-                                <span class="skill-name">HTML</span>
+                            <span class="skill-name">Kotlin (6 tháng)</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 40%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Công nghệ Web</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">HTML (2 năm)</span>
                                 <div class="skill-bar">
                         <div class="skill-progress" style="width: 85%"></div>
                                 </div>
                             </div>
                             <div class="skill-item">
-                                <span class="skill-name">CSS</span>
+                            <span class="skill-name">CSS (2 năm)</span>
                                 <div class="skill-bar">
                         <div class="skill-progress" style="width: 80%"></div>
                                 </div>
                             </div>
                             <div class="skill-item">
-                    <span class="skill-name">JavaScript</span>
+                            <span class="skill-name">JavaScript (1 năm)</span>
                                 <div class="skill-bar">
                         <div class="skill-progress" style="width: 65%"></div>
                     </div>
                 </div>
                             <div class="skill-item">
-                                <span class="skill-name">MySQL</span>
+                            <span class="skill-name">MySQL (1 năm)</span>
                                 <div class="skill-bar">
                         <div class="skill-progress" style="width: 70%"></div>
                                 </div>
                             </div>
-                            <div class="skill-item">
-                    <span class="skill-name">Kotlin</span>
-                                <div class="skill-bar">
-                        <div class="skill-progress" style="width: 40%"></div>
+                    </div>
+                </div>
                                 </div>
                             </div>
             </section>
 
-            <!-- Languages Section -->
-            <section class="languages-section">
-                <h3 class="sidebar-title">LANGUAGES</h3>
-                <div class="language-item">
-                    <span class="language-name">Vietnamese</span>
-                    <div class="language-dots">
-                        <span class="dot filled"></span>
-                        <span class="dot filled"></span>
-                        <span class="dot filled"></span>
-                        <span class="dot filled"></span>
-                        <span class="dot filled"></span>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Dự án nổi bật</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image aqualife-bg">
+                        <span class="fish-emoji">🐠</span>
+                        <span class="fish-emoji">🐟</span>
+                        <span class="fish-emoji">🐡</span>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/ToriToriisme/AquaLife" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>AquaLife - Ứng dụng mua bán cá</h3>
+                        <p>Ứng dụng di động được xây dựng bằng Kotlin để mua bán cá cảnh và cá biển. Bao gồm thông tin chi tiết về cá, giao diện thân thiện và hệ thống đặt hàng tích hợp.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Kotlin</span>
+                            <span class="tech-tag">Android Studio</span>
+                            <span class="tech-tag">Mobile UI/UX</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image qlda-bg">
+                        <span class="food-emoji">🍳</span>
+                        <span class="food-emoji">🥘</span>
+                        <span class="food-emoji">🍲</span>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/MP-1611/QLDA" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>QLDA - Nền tảng công thức nấu ăn</h3>
+                        <p>Nền tảng web full-stack được xây dựng bằng PHP để giúp người mới học nấu ăn. Bao gồm hệ thống quản lý công thức, RESTful APIs và thiết kế responsive.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
                     </div>
                                 </div>
-                <div class="language-item">
-                    <span class="language-name">English</span>
-                    <div class="language-dots">
-                        <span class="dot filled"></span>
-                        <span class="dot filled"></span>
-                        <span class="dot filled"></span>
-                        <span class="dot filled"></span>
-                        <span class="dot"></span>
+
+                <div class="project-card">
+                    <div class="project-image pickleball-bg">
+                        <span class="sport-emoji">🏓</span>
+                        <span class="sport-emoji">⏰</span>
+                        <span class="sport-emoji">📅</span>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Hệ thống đặt sân Pickleball</h3>
+                        <p>Hệ thống backend cho việc đặt sân chơi Pickleball với Spring Boot. Bao gồm giao diện lịch, RESTful APIs và tích hợp thanh toán real-time.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">RESTful API</span>
+                        </div>
+                    </div>
+                </div>
                     </div>
                 </div>
             </section>
 
             <!-- Education Section -->
-            <section class="education-section">
-                <h3 class="sidebar-title">EDUCATION</h3>
-                <div class="education-item">
-                    <div class="education-degree">Bachelor in IT</div>
-                    <div class="education-school">Đại học GTVT TP.HCM</div>
-                </div>
-                <div class="education-item">
-                    <div class="education-degree">IELTS 6.0</div>
-                    <div class="education-school">2023</div>
+    <section class="education">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Học vấn & Thành tích</h2>
+                <div class="section-divider"></div>
             </div>
-            </section>
-        </aside>
-
-        <!-- Main Content -->
-        <main class="main-content">
-            <!-- Header with Name, Title, and Profile Picture -->
-            <header class="main-header">
-                <div class="header-content">
-                    <h1 class="main-name">Phan Thành Đức Nhân</h1>
-                    <h2 class="main-title">FULL STACK DEVELOPER</h2>
-                        </div>
-                <div class="profile-image">
-                    <img src="imageCV.jpg" alt="Phan Thành Đức Nhân">
-                </div>
-            </header>
-
-            <!-- About Me Section -->
-            <section class="about-section">
-                <h2 class="section-title">ABOUT ME</h2>
-                <div class="section-divider"></div>
-                <p class="about-content">
-                    Sinh viên năm 3 ngành CNTT với GPA 3.0 và định hướng rõ ràng trở thành Full-Stack Developer. Có nền tảng lập trình vững chắc với 3 năm kinh nghiệm C++ và 1 năm Java. Nhanh chóng tiếp thu công nghệ mới (Kotlin, PHP), đặc biệt có kinh nghiệm thực chiến trong việc xây dựng UI/UX (HTML, CSS, PHP) qua nhiều dự án. Luôn chủ động, có tư duy giải quyết vấn đề tốt và cam kết học hỏi để mang lại chất lượng cao nhất.
-                </p>
-            </section>
-
-            <!-- Experience Section -->
-            <section class="experience-section">
-                <h2 class="section-title">EXPERIENCE</h2>
-                <div class="section-divider"></div>
-                
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div class="experience-title">
-                            <h3>Mobile App Developer</h3>
-                            <p class="company">AquaLife - Fish Trading App</p>
-                        </div>
-                        <span class="experience-date">2023 - Present</span>
+            <div class="education-content">
+                <div class="education-item">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <ul class="experience-list">
-                        <li>Phát triển ứng dụng mobile Kotlin cho việc mua bán cá cảnh và cá biển</li>
-                        <li>Thiết kế giao diện người dùng thân thiện với Android Studio</li>
-                        <li>Implementing tính năng xem thông tin chi tiết các loại cá</li>
-                        <li>Quản lý hệ thống đặt hàng và thanh toán tích hợp</li>
-                    </ul>
-                    <div class="project-link-container">
-                        <a href="https://github.com/ToriToriisme/AquaLife" target="_blank" class="project-link">
+                    <div class="education-details">
+                        <h3>Cử nhân Công nghệ Thông tin</h3>
+                        <p class="education-school">Đại học GTVT TP.HCM</p>
+                        <p class="education-period">2022 - Hiện tại (Năm 3)</p>
+                        <p class="education-gpa">GPA: 3.0/4.0</p>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="education-icon">
+                        <i class="fas fa-certificate"></i>
+            </div>
+                    <div class="education-details">
+                        <h3>IELTS Academic</h3>
+                        <p class="education-school">British Council</p>
+                        <p class="education-period">2023</p>
+                        <p class="education-gpa">Điểm: 6.0</p>
+                        </div>
+                </div>
+            </div>
+        </div>
+            </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Liên hệ</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Hãy kết nối với tôi!</h3>
+                    <p>Tôi luôn quan tâm đến những cơ hội mới, hợp tác và các dự án thú vị. Hãy liên hệ với tôi!</p>
+                    <div class="contact-methods">
+                        <a href="mailto:toritori.wok@gmail.com" class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>Gmail</p>
+                        </div>
+                        </a>
+                        <a href="tel:0913133705" class="contact-method">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Điện thoại</h4>
+                                <p>091 313 3705</p>
+                    </div>
+                        </a>
+                        <a href="https://github.com/ToriToriisme" target="_blank" class="contact-method">
                             <i class="fab fa-github"></i>
-                            View on GitHub
+                            <div>
+                                <h4>GitHub</h4>
+                                <p>GitHub Profile</p>
+                            </div>
+                        </a>
+                        <a href="https://www.linkedin.com/in/nh%C3%A2n-phan-th%C3%A0nh-%C4%91%E1%BB%A9c-712866333/" target="_blank" class="contact-method">
+                            <i class="fab fa-linkedin"></i>
+                            <div>
+                                <h4>LinkedIn</h4>
+                                <p>LinkedIn Profile</p>
+                    </div>
+                        </a>
+                        <a href="https://www.facebook.com/phan.thanh.uc.nhan?locale=vi_VN" target="_blank" class="contact-method">
+                            <i class="fab fa-facebook"></i>
+                            <div>
+                                <h4>Facebook</h4>
+                                <p>Facebook Profile</p>
+                </div>
+                        </a>
+                        <a href="https://www.instagram.com/tokarito_tori/" target="_blank" class="contact-method">
+                            <i class="fab fa-instagram"></i>
+                            <div>
+                                <h4>Instagram</h4>
+                                <p>@tokarito_tori</p>
+                    </div>
                         </a>
                     </div>
                 </div>
-
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div class="experience-title">
-                            <h3>Full Stack Developer</h3>
-                            <p class="company">QLDA - Cooking Recipe Platform</p>
-                        </div>
-                        <span class="experience-date">2023 - Present</span>
                     </div>
-                    <ul class="experience-list">
-                        <li>Xây dựng nền tảng web PHP giúp người mới học nấu ăn</li>
-                        <li>Thiết kế hệ thống quản lý công thức nấu ăn với MySQL</li>
-                        <li>Phát triển API RESTful cho việc thêm và tìm kiếm công thức</li>
-                        <li>Tích hợp giao diện responsive với HTML, CSS và JavaScript</li>
-                    </ul>
-                    <div class="project-link-container">
-                        <a href="https://github.com/MP-1611/QLDA" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i>
-                            View on GitHub
-                        </a>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div class="experience-title">
-                            <h3>Backend Developer</h3>
-                            <p class="company">Pickleball Booking System</p>
-                        </div>
-                        <span class="experience-date">2024 - Present</span>
-                    </div>
-                    <ul class="experience-list">
-                        <li>Phát triển hệ thống đặt lịch chơi Pickleball với Spring Boot</li>
-                        <li>Thiết kế giao diện booking calendar với JavaScript và HTML/CSS</li>
-                        <li>Implementing RESTful APIs cho việc quản lý lịch đặt sân</li>
-                        <li>Tích hợp hệ thống thanh toán và thông báo real-time</li>
-                    </ul>
                 </div>
             </section>
-        </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Phan Thành Đức Nhân. Tất cả quyền được bảo lưu.</p>
+                <div class="footer-links">
+                    <a href="#home">Trang chủ</a>
+                    <a href="#about">Giới thiệu</a>
+                    <a href="#projects">Dự án</a>
+                    <a href="#contact">Liên hệ</a>
+                </div>
+            </div>
     </div>
+    </footer>
 
     <script>
-        // Animate skill bars on scroll
+        // ========================================
+        // SMOOTH SCROLLING - Cuộn mượt cho navigation links
+        // ========================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // ========================================
+        // MOBILE MENU TOGGLE - Toggle menu di động với hiệu ứng
+        // ========================================
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            
+            // Thêm hiệu ứng ripple khi click
+            createRippleEffect(hamburger);
+        });
+
+        // Đóng mobile menu khi click vào link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // ========================================
+        // RIPPLE EFFECT - Hiệu ứng sóng khi click
+        // ========================================
+        function createRippleEffect(element) {
+            const ripple = document.createElement('span');
+            const rect = element.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = event.clientX - rect.left - size / 2;
+            const y = event.clientY - rect.top - size / 2;
+            
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            ripple.classList.add('ripple');
+            
+            element.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        }
+
+        // Thêm ripple effect cho tất cả buttons
+        document.querySelectorAll('.btn, .banner-card, .project-card, .contact-method').forEach(element => {
+            element.addEventListener('click', function(e) {
+                createRippleEffect(this);
+            });
+        });
+
+        // ========================================
+        // SKILL BARS ANIMATION - Animation thanh kỹ năng
+        // ========================================
         function animateSkillBars() {
             const skillBars = document.querySelectorAll('.skill-progress');
-            skillBars.forEach(bar => {
-                const width = bar.style.width;
+            skillBars.forEach((bar, index) => {
+                const targetWidth = bar.getAttribute('data-width') || bar.style.width;
                 bar.style.width = '0%';
                 setTimeout(() => {
-                bar.style.width = width;
-                }, 500);
+                    bar.style.width = targetWidth;
+                }, index * 100 + 300);
             });
         }
 
-        // Initialize animations when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(animateSkillBars, 1000);
+        // ========================================
+        // INTERSECTION OBSERVER - Quan sát khi scroll
+        // ========================================
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    
+                    // Animation skill bars khi skills section vào view
+                    if (entry.target.classList.contains('skills')) {
+                        setTimeout(animateSkillBars, 300);
+                    }
+                    
+                    // Animation cho banner cards
+                    if (entry.target.classList.contains('portfolio-banner')) {
+                        const cards = entry.target.querySelectorAll('.banner-card');
+                        cards.forEach((card, index) => {
+                            setTimeout(() => {
+                                card.style.transform = 'translateY(0) scale(1)';
+                                card.style.opacity = '1';
+                            }, index * 100);
+                        });
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Quan sát tất cả sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
         });
+
+        // ========================================
+        // NAVBAR BACKGROUND ON SCROLL - Thay đổi navbar khi scroll
+        // ========================================
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // ========================================
+        // PARALLAX EFFECT - Hiệu ứng parallax cho hero
+        // ========================================
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // ========================================
+        // CURSOR FOLLOW EFFECT - Hiệu ứng cursor theo dõi
+        // ========================================
+        document.addEventListener('mousemove', (e) => {
+            const cursor = document.querySelector('.cursor');
+            if (cursor) {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            }
+        });
+
+        // ========================================
+        // IMAGE ERROR HANDLING - Xử lý lỗi hình ảnh
+        // ========================================
+        function handleImageError(img) {
+            img.style.background = 'var(--gradient-primary)';
+            img.style.display = 'flex';
+            img.style.alignItems = 'center';
+            img.style.justifyContent = 'center';
+            img.style.color = 'var(--bg-dark)';
+            img.style.fontSize = '2rem';
+            img.innerHTML = '📷';
+            img.alt = 'Image not available';
+        }
+
+        // Thêm error handling cho tất cả images
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('error', function() {
+                handleImageError(this);
+            });
+            
+            // Kiểm tra nếu image đã load thành công
+            img.addEventListener('load', function() {
+                this.style.opacity = '1';
+            });
+        });
+
+        // ========================================
+        // INITIALIZE ANIMATIONS - Khởi tạo animations
+        // ========================================
+        document.addEventListener('DOMContentLoaded', function() {
+            // Thêm loading animation
+            document.body.classList.add('loaded');
+            
+            // Thiết lập data attributes cho skill bars
+            const skillBars = document.querySelectorAll('.skill-progress');
+            skillBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.setAttribute('data-width', width);
+            });
+
+            // Khởi tạo banner cards với animation delay
+            const bannerCards = document.querySelectorAll('.banner-card');
+            bannerCards.forEach((card, index) => {
+                card.style.transform = 'translateY(50px) scale(0.8)';
+                card.style.opacity = '0';
+                card.style.transition = 'all 0.6s ease';
+            });
+
+            // Thêm hiệu ứng hover cho project cards
+            document.querySelectorAll('.project-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            // Thêm hiệu ứng click cho tech tags
+            document.querySelectorAll('.tech-tag').forEach(tag => {
+                tag.addEventListener('click', function() {
+                    this.style.transform = 'scale(1.2) rotate(5deg)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1) rotate(0deg)';
+                    }, 200);
+                });
+            });
+        });
+
+        // ========================================
+        // KEYBOARD NAVIGATION - Điều hướng bằng bàn phím
+        // ========================================
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // ========================================
+        // PERFORMANCE OPTIMIZATION - Tối ưu hiệu suất
+        // ========================================
+        // Debounce function cho scroll events
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Áp dụng debounce cho scroll events
+        const debouncedScrollHandler = debounce(() => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        }, 10);
+
+        window.addEventListener('scroll', debouncedScrollHandler);
     </script>
 </body>
 </html>
