@@ -1,16 +1,14 @@
-/* Custom Properties (Biến CSS) */
 :root {
-    --color-pastel-pink: #FFB3C1; /* Hồng Pastel */
-    --color-pastel-blue: #A2D2FF; /* Xanh Dương Pastel */
-    --color-pastel-mint: #B9FBC0; /* Xanh Mint */
-    --color-dark-purple: #3A0CA3; /* Màu nhấn chính (cho chữ/icon) */
+    --color-pastel-pink: #FFB3C1; 
+    --color-pastel-blue: #A2D2FF; 
+    --color-pastel-mint: #B9FBC0; 
+    --color-dark-purple: #3A0CA3; 
     --color-text-dark: #1F1F1F;
     --color-text-light: #F0F0F0;
     --font-primary: 'Poppins', sans-serif;
-    --font-secondary: 'Comfortaa', cursive; /* Font Gen Z, hiện đại hơn */
+    --font-secondary: 'Comfortaa', cursive; 
 }
 
-/* Thêm font Comfortaa cho cảm giác trẻ trung hơn */
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap');
 
 * {
@@ -23,7 +21,7 @@ body {
     font-family: var(--font-primary);
     line-height: 1.6;
     color: var(--color-text-dark);
-    background-color: #FAFAFA; /* Nền trắng mềm mại */
+    background-color: #FAFAFA; 
 }
 
 .container {
@@ -32,34 +30,29 @@ body {
     margin: 0 auto;
 }
 
-
-/* 1. HEADER & NAVIGATION BASE */
 header {
     background-color: white;
-    /* Dùng box-shadow nhẹ, màu pastel cho header */
-    box-shadow: 0 5px 15px rgba(255, 179, 193, 0.3); /* Bóng hồng pastel */
-    position: sticky;
+    box-shadow: 0 5px 15px rgba(255, 179, 193, 0.3); 
     top: 0;
     z-index: 1000;
 }
 
 .logo a {
-    font-family: var(--font-secondary); /* Font độc đáo hơn */
+    font-family: var(--font-secondary); 
     font-weight: 700;
-    font-size: 1.8rem; /* Cỡ lớn hơn một chút */
+    font-size: 1.8rem; 
     color: var(--color-dark-purple);
     text-decoration: none;
-    /* Hiệu ứng gradient nhẹ cho logo */
     background: linear-gradient(45deg, var(--color-pastel-pink), var(--color-dark-purple));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-/* 2. MAIN NAV - MENU DẠNG VIÊN THUỐC */
+/*MAIN NAV*/
 .main-nav ul {
     list-style: none;
     display: flex;
-    gap: 10px; /* Khoảng cách giữa các mục */
+    gap: 10px;
 }
 
 .main-nav ul li a {
@@ -67,33 +60,28 @@ header {
     font-weight: 600;
     color: var(--color-text-dark);
     padding: 8px 20px;
-    border-radius: 30px; /* Tạo hình dạng viên thuốc (Pill Shape) */
+    border-radius: 30px; 
     text-decoration: none;
     transition: all 0.3s ease;
     position: relative;
     z-index: 1;
 }
 
-/* Hiệu ứng khi Active/Hover */
 .main-nav ul li a.active,
 .main-nav ul li a:hover {
     color: white;
-    /* Thay đổi màu nền khi hover/active */
     background: var(--color-dark-purple);
-    /* Thêm shadow nhẹ khi hover để tạo cảm giác nổi */
     box-shadow: 0 4px 10px rgba(58, 12, 163, 0.4);
-    transform: translateY(-2px); /* Hiệu ứng nhấc nhẹ */
+    transform: translateY(-2px); 
 }
 
-/* Chỉnh sửa riêng cho trạng thái Active */
 .main-nav ul li a.active {
-    background: var(--color-pastel-pink); /* Màu hồng pastel nổi bật */
+    background: var(--color-pastel-pink); 
     color: var(--color-dark-purple);
     border: 2px solid var(--color-dark-purple);
     box-shadow: 0 4px 10px rgba(255, 179, 193, 0.6);
 }
 
-/* 3. MOBILE MENU - Thay nút ba gạch bằng icon dễ thương hơn (Tùy chọn) */
 .menu-toggle {
     background: var(--color-pastel-mint);
     border: none;
@@ -106,7 +94,7 @@ header {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0 0 0 4px var(--color-pastel-blue); /* Viền màu pastel */
+    box-shadow: 0 0 0 4px var(--color-pastel-blue);
 }
 /* BUTTONS */
 .btn {
@@ -125,7 +113,7 @@ header {
 
 .btn-primary:hover {
     background-color: #5A189A;
-    transform: translateY(-3px); /* Hiệu ứng "pop" Gen Z */
+    transform: translateY(-3px);
 }
 
 .btn-secondary {
@@ -140,7 +128,7 @@ header {
     color: var(--color-dark-purple);
 }
 
-/* SECTIONS (Chia section bằng màu nền pastel) */
+/* SECTIONS*/
 .section-mint-bg {
     background: linear-gradient(135deg, var(--color-pastel-mint) 0%, var(--color-pastel-blue) 100%); /* Gradient nền */
 }
@@ -152,10 +140,8 @@ header {
     overflow: hidden; 
   
     box-shadow: 
-        /* Lớp bóng mờ nhạt (như ánh sáng tỏa ra) */
-        0 0 10px rgba(255, 179, 193, 0.8), /* Màu hồng pastel, mờ nhẹ */
-        /* Lớp bóng mạnh hơn (tạo cảm giác phản quang) */
-        0 0 20px rgba(190, 54, 224, 0.6); /* Màu tím đậm từ gradient, tỏa rộng */
+        0 0 10px rgba(255, 179, 193, 0.8), 
+        0 0 20px rgba(190, 54, 224, 0.6); 
 }
 
 footer .container{

@@ -8,16 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* CSS BỔ SUNG CHO BỐ CỤC GEN Z CHIC */
 :root {
-    --color-pastel-pink: #FFB3C1; /* Hồng Pastel */
-    --color-pastel-blue: #A2D2FF; /* Xanh Dương Pastel */
-    --color-pastel-mint: #B9FBC0; /* Xanh Mint */
-    --color-dark-purple: #3A0CA3; /* Màu nhấn chính (cho chữ/icon) */
+    --color-pastel-pink: #FFB3C1; 
+    --color-pastel-blue: #A2D2FF;
+    --color-pastel-mint: #B9FBC0; 
+    --color-dark-purple: #3A0CA3; 
     --color-text-dark: #1F1F1F;
     --color-text-light: #F0F0F0;
     --font-primary: 'Poppins', sans-serif;
-    --font-secondary: 'Comfortaa', cursive; /* Font Gen Z, hiện đại hơn */
+    --font-secondary: 'Comfortaa', cursive; 
 }
 
         .story-section {
@@ -25,19 +24,18 @@
             background: linear-gradient(135deg, var(--color-pastel-blue) 0%, var(--color-pastel-pink) 100%); /* Gradient nền */
         }
 
-        /* ------------------ NEW: Profile Image Box ------------------ */
         .profile-image-box {
             text-align: center;
             margin-bottom: 40px;
         }
 
         .profile-image-box img {
-            width: 200px; /* Kích thước ảnh */
+            width: 200px; 
             height: 200px;
-            border-radius: 50%; /* Ảnh tròn */
+            border-radius: 50%; 
             object-fit: cover;
-            border: 6px solid white; /* Viền trắng dày */
-            box-shadow: 0 0 0 8px var(--color-pastel-pink); /* Viền màu hồng pastel nổi bật */
+            border: 6px solid white;
+            box-shadow: 0 0 0 8px var(--color-pastel-pink); 
             transition: transform 0.3s;
         }
 
@@ -45,7 +43,6 @@
             transform: scale(1.05) rotate(3deg);
         }
 
-        /* ------------------ CẤU TRÚC BOX ------------------ */
         .info-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -151,10 +148,9 @@
         .hobby-item p {
             margin-top: 10px;
             font-weight: 600;
-            color: white; /* Đổi màu chữ cho dễ đọc trên nền hồng */
+            color: white; 
         }
         
-        /* Responsive */
         @media (max-width: 768px) {
             .info-grid {
                 grid-template-columns: 1fr;
@@ -269,31 +265,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- <section class="hobbies-section">
-            <div class="container" style="text-align: center;">
-                <h2 style="font-family: var(--font-secondary); font-size: 2.5rem; color: white;">💖 My Favorite Things 💖</h2>
-                <div class="hobbies-grid">
-                    <div class="hobby-item">
-                        <img src="images/hobby-music.jpg" alt="Nghe nhạc">
-                        <p>Nghe Lo-fi & Pop K-Indie</p>
-                    </div>
-                    <div class="hobby-item">
-                        <img src="images/hobby-game.jpg" alt="Chơi game">
-                        <p>Chơi game Indie & RPG</p>
-                    </div>
-                    <div class="hobby-item">
-                        <img src="images/hobby-cat.jpg" alt="Mèo">
-                        <p>Chăm sóc 'boss' mèo</p>
-                    </div>
-                    <div class="hobby-item">
-                        <img src="images/hobby-draw.jpg" alt="Vẽ vời">
-                        <p>Vẽ và Sketching</p>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-
     </main>
 
     <footer>
