@@ -24,7 +24,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(18, 18, 18, 0.5); 
+    background-color: rgba(115, 102, 102, 0.5); 
     z-index: -1; 
 }
 
@@ -219,7 +219,8 @@ section::before {
     text-align: left; 
 }
 
-.about-text, .about-education {
+/* (Đã thêm .about-self) */
+.about-text, .about-education, .about-self {
     flex: 1; 
     min-width: 300px; 
     background-color: rgba(30, 30, 30, 0.8); 
@@ -227,7 +228,8 @@ section::before {
     border-radius: 8px;
 }
 
-.about-text h3, .about-education h3 {
+/* (Đã thêm .about-self h3) */
+.about-text h3, .about-education h3, .about-self h3 {
     font-size: 1.5em;
     color: #e74c3c; 
     border-bottom: 2px solid #444;
@@ -314,6 +316,19 @@ section::before {
     font-weight: bold;
 }
 
+/* --- 4.5. PHẦN CÔNG CỤ (TOOLS) - (Thêm mới) --- */
+.tools {
+    /* Tạm dùng lại ảnh nền của About (2.jpg) để xen kẽ. 
+       Bạn có thể đổi sang ảnh khác (ví dụ: new-bg.jpg) */
+    background-image: url('2.jpg'); 
+    background-size: cover; 
+    background-position: center;
+    background-attachment: fixed;
+}
+.tools::before {
+    background-color: rgba(18, 18, 18, 0.85);
+}
+
 /* --- 5. PHẦN DỰ ÁN (PROJECTS) - CÓ ẢNH NỀN RIÊNG --- */
 .projects {
     background-image: url('4.jpg'); 
@@ -366,6 +381,40 @@ section::before {
     color: #cccccc;
 }
 
+/* (CSS CẬP NHẬT CHO DỰ ÁN) */
+.projects .project-subtitle {
+    font-size: 1.8em;
+    color: #ffffff; /* (Đã đổi thành màu trắng) */
+    text-align: left;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #444;
+    padding-bottom: 5px;
+}
+.project-info .skill-bar-container {
+    margin-top: 25px; 
+    background-color: #555;
+    border-radius: 5px;
+    height: 10px;
+    position: relative;
+    width: 100%;
+}
+.project-info .skill-bar {
+    background-color: #e74c3c;
+    height: 100%;
+    border-radius: 5px;
+}
+.project-info .skill-percentage {
+    position: absolute;
+    right: 0;
+    top: -20px;
+    font-size: 0.9em;
+    color: #ffffff;
+    font-weight: bold;
+}
+/* (HẾT CSS CẬP NHẬT CHO DỰ ÁN) */
+
+
 /* --- 6. PHẦN LIÊN HỆ (CONTACT) - CÓ ẢNH NỀN RIÊNG --- */
 .contact {
     background-image: url('5.jpg'); 
@@ -392,30 +441,12 @@ section::before {
     color: #ffffff; 
 }
 
-.social-links {
-    margin-top: 20px;
-}
-
-.social-links a {
-    font-size: 2.5em;
-    color: #cccccc; 
-    margin: 0 15px;
-    transition: color 0.3s; 
-    display: inline-block; 
-}
-
-.social-links a:hover {
-    color: #e74c3c; 
-    animation: bounce-once 0.6s ease; 
-}
-
 /* --- 7. FOOTER --- */
 .footer {
     background-color: #000000; 
     color: #ffffff;
     text-align: center;
     padding: 20px 0;
-    /* (ĐÃ CẬP NHẬT) Loại bỏ margin-top để footer liền mạch với section contact */
     margin-top: 0; 
 }
 
@@ -426,4 +457,192 @@ section::before {
     60%  { transform: translateY(0px); }  
     80%  { transform: translateY(-2px); } 
     100% { transform: translateY(0); }  
+}
+
+/*
+--- CSS CHO BỐ CỤC ẢNH VÀ NỘI DUNG (TỪ LẦN TRƯỚC) ---
+*/
+
+.section-content-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép xuống dòng trên mobile */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: space-between;
+    margin-top: 40px; /* Khoảng cách với H2 */
+    text-align: left; /* Ghi đè text-align: center của section */
+}
+
+/* -- Cấu trúc BÊN TRÁI (Ảnh bên trái) -- */
+.section-content-wrapper.layout-left {
+    flex-direction: row;
+}
+
+/* -- Cấu trúc BÊN PHẢI (Ảnh bên phải) -- */
+.section-content-wrapper.layout-right {
+    flex-direction: row-reverse;
+}
+
+.section-image-container {
+    flex: 1; /* Tự co dãn */
+    min-width: 300px; /* Chiều rộng tối thiểu */
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.section-image-container img {
+    width: 100%;
+    max-height: 450px; /* Giới hạn chiều cao */
+    object-fit: cover; /* Cắt ảnh cho vừa */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.section-main-content {
+    flex: 1.5; /* Cho nội dung nhiều không gian hơn ảnh */
+    min-width: 300px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* --- CSS CHO RESPONSIVE (TỪ LẦN TRƯỚC) --- */
+@media (max-width: 768px) {
+    .section-content-wrapper,
+    .section-content-wrapper.layout-right {
+        flex-direction: column; /* Xếp chồng lên nhau */
+    }
+    
+    .section-image-container {
+        margin-bottom: 30px; /* Tạo khoảng cách khi xếp chồng */
+        padding: 0;
+    }
+    
+    .section-main-content {
+        padding: 0;
+        /* Căn giữa nội dung chính (như text trong contact) khi thu nhỏ */
+        text-align: center; 
+    }
+    
+    /* Căn trái lại cho các card và grid bên trong */
+    .skills-grid, 
+    .project-card, 
+    .about-content, 
+    .contact-info,
+    .projects .project-subtitle,
+    .contact-form { /* Thêm form vào đây */
+        text-align: left;
+    }
+
+    /* Căn giữa cho social links trên mobile */
+    .social-links {
+        text-align: center;
+    }
+
+    /* --- CẬP NHẬT RESPONSIVE CHO NAVBAR MỚI --- */
+    .logo-container {
+        /* Cho phép logo và icon xuống dòng nếu không đủ chỗ */
+        flex-wrap: wrap;
+        justify-content: center; /* Căn giữa logo và icons */
+    }
+    .navbar .container {
+        flex-direction: column; /* Xếp chồng logo-container và nav */
+    }
+    .navbar nav {
+        margin-top: 10px; /* Khoảng cách giữa icons và nav links */
+    }
+    .navbar nav ul {
+        flex-wrap: wrap; /* Cho phép các link nav xuống dòng */
+        justify-content: center;
+    }
+    .navbar nav li {
+        margin: 5px 10px; /* Giảm margin so với 20px */
+    }
+}
+
+/* --- CSS CẬP NHẬT (TỪ LẦN TRƯỚC) --- 
+*/
+
+/* 1. Căn lề cho ảnh ở mục Contact (dời lên trên) */
+#contact .section-content-wrapper {
+    align-items: flex-start; 
+}
+
+/* 2. Style cho Form liên hệ mới */
+.contact-form {
+    margin-top: 30px;
+    text-align: left;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background-color: rgba(30, 30, 30, 0.9);
+    color: #f4f4f4;
+    font-size: 1em;
+    box-sizing: border-box; /* Quan trọng để padding không làm vỡ layout */
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #999;
+}
+.contact-form button {
+    border: none;
+    cursor: pointer;
+}
+
+/* 3. Style cho Social Links ở Footer */
+.footer .social-links {
+    margin-top: 15px;
+}
+.footer .social-links a {
+    font-size: 2em; 
+    color: #cccccc;
+    margin: 0 10px;
+    transition: color 0.3s;
+    display: inline-block;
+}
+.footer .social-links a:hover {
+    color: #e74c3c; 
+    animation: none; 
+}
+
+/* --- CSS CẬP NHẬT MỚI NHẤT (CHO ICON NAVBAR BÊN CẠNH LOGO) ---
+*/
+
+/* 1. Tạo container cho logo và icons */
+.logo-container {
+    display: flex;
+    align-items: center; /* Căn giữa logo và icons theo chiều dọc */
+}
+
+/* 2. Style cho wrapper của các icon mới */
+.navbar-social-icons {
+    display: flex;
+    margin-left: 15px; /* Khoảng cách giữa "Duy Đào" và icon đầu tiên */
+}
+
+/* 3. Style cho từng icon link */
+.navbar-social-icons a {
+    color: #f4f4f4;
+    font-size: 1.3em;
+    margin: 0 5px; /* Khoảng cách giữa các icon */
+    padding: 5px;
+    border-radius: 5px;
+    transition: color 0.3s;
+    text-decoration: none;
+}
+
+/* 4. Style hover cho icon */
+.navbar-social-icons a:hover {
+    color: #e74c3c;
+    animation: none; /* Bỏ hiệu ứng bounce */
+}
+
+/* 5. Xóa style cũ cho icon (nếu còn) */
+.navbar nav li.nav-social-icon {
+    display: none; 
 }
