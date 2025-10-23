@@ -1,62 +1,74 @@
 /* --- CÀI ĐẶT CHUNG (Chủ đề Đỏ & Đen) --- */
 body {
+    /* Thiết lập font chữ chung cho toàn trang */
     font-family: Arial, sans-serif;
+    /* Xóa lề và khoảng đệm mặc định của trình duyệt */
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    line-height: 1.6; /* Tăng chiều cao dòng để dễ đọc */
+    
+    /* Khi cuộn mượt đến 1 ID, tạo khoảng đệm 70px ở trên cùng (tránh bị navbar che) */
     scroll-padding-top: 70px; 
+    /* Bật tính năng cuộn mượt khi nhấn vào các link # */
     scroll-behavior: smooth; 
 
+    /* ----- Cài đặt ảnh nền chính ----- */
     background-image: url('1.jpg'); 
-    background-size: cover; 
-    background-position: center center; 
-    background-repeat: no-repeat; 
-    background-attachment: fixed; 
+    background-size: cover; /* Phủ đầy màn hình */
+    background-position: center center; /* Căn giữa ảnh */
+    background-repeat: no-repeat; /* Không lặp lại ảnh */
+    background-attachment: fixed; /* Tạo hiệu ứng Parallax (ảnh nền đứng yên khi cuộn) */
     
+    /* Màu chữ mặc định (màu trắng ngà) */
     color: #f4f4f4; 
 }
 
-/* Giảm độ mờ lớp phủ chính */
+/* Tạo một lớp phủ mờ trên toàn bộ ảnh nền body */
 body::before {
     content: '';
-    position: fixed;
+    position: fixed; /* Cố định lớp phủ */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(115, 102, 102, 0.5); 
-    z-index: -1; 
+    background-color: rgba(115, 102, 102, 0.5); /* Màu xám mờ */
+    z-index: -1; /* Đặt lớp phủ bên dưới nội dung */
 }
 
-
+/* --- LỚP CONTAINER (GIỚI HẠN CHIỀU RỘNG) --- */
 .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
+    max-width: 1100px; /* Chiều rộng tối đa của nội dung */
+    margin: 0 auto; /* Tự động căn giữa */
+    padding: 0 20px; /* Khoảng đệm 2 bên */
 }
 
+/* --- CÀI ĐẶT TIÊU ĐỀ (H1, H2, H3) --- */
 h1, h2, h3 {
-    color: #ffffff; 
-    font-weight: 600;
+    color: #ffffff; /* Màu chữ trắng */
+    font-weight: 600; /* Độ đậm */
 }
 
+/* Định dạng riêng cho H2 (Tiêu đề các Section) */
 h2 {
-    text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 40px;
-    border-bottom: 3px solid #e74c3c; 
-    padding-bottom: 10px;
-    display: inline-block; 
+    text-align: center; /* Căn giữa */
+    font-size: 2.5em; /* Cỡ chữ */
+    margin-bottom: 40px; /* Khoảng cách bên dưới */
+    border-bottom: 3px solid #e74c3c; /* Đường viền đỏ bên dưới */
+    padding-bottom: 10px; /* Khoảng đệm dưới chữ */
+    display: inline-block; /* Chỉ chiếm độ rộng cần thiết */
 }
 
+/* --- CÀI ĐẶT CHUNG CHO CÁC SECTION --- */
 section {
-    padding: 60px 0;
-    text-align: center; 
-    background-color: transparent; 
-    position: relative; 
-    overflow: hidden; 
+    padding: 60px 0; /* Khoảng đệm trên và dưới */
+    text-align: center; /* Căn giữa nội dung bên trong (mặc định) */
+    background-color: transparent; /* Nền trong suốt (để thấy ảnh nền body) */
+    position: relative; /* Cần thiết cho lớp phủ ::before */
+    overflow: hidden; /* Tránh các yếu tố con tràn ra ngoài */
 }
 
+/* Lớp phủ màu đen mờ cho TỪNG section */
+/* Lớp phủ này nằm TRÊN ảnh nền body, nhưng DƯỚI nội dung section */
 section::before {
     content: '';
     position: absolute;
@@ -64,67 +76,73 @@ section::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(18, 18, 18, 0.8); 
-    z-index: -1; 
+    background-color: rgba(18, 18, 18, 0.8); /* Màu đen mờ 80% */
+    z-index: -1; /* Nằm dưới nội dung của section */
 }
 
 
 /* --- 1. THANH ĐIỀU HƯỚNG (NAVBAR) --- */
 .navbar {
-    background-color: rgba(30, 30, 30, 0.9); 
-    border-bottom: 1px solid #333;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    position: fixed; 
+    background-color: rgba(30, 30, 30, 0.9); /* Nền đen mờ 90% */
+    border-bottom: 1px solid #333; /* Viền dưới xám tối */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Đổ bóng */
+    position: fixed; /* Cố định trên cùng màn hình */
     top: 0;
     left: 0;
-    width: 100%;
-    z-index: 1000;
+    width: 100%; /* Chiều rộng 100% */
+    z-index: 1000; /* Nằm trên tất cả các phần tử khác */
 }
 
+/* Căn chỉnh nội dung bên trong navbar */
 .navbar .container {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    padding: 10px 20px;
+    display: flex; /* Dùng Flexbox */
+    justify-content: space-between; /* Đẩy logo và nav ra 2 bên */
+    align-items: center; /* Căn giữa các mục theo chiều dọc */
+    padding: 10px 20px; /* Giảm padding của container chung */
 }
 
+/* Logo "Duy Đào" */
 .navbar .logo {
     font-size: 1.8em;
     font-weight: bold;
-    color: #e74c3c; 
-    text-decoration: none;
+    color: #e74c3c; /* Màu đỏ chủ đạo */
+    text-decoration: none; /* Bỏ gạch chân */
 }
 
+/* Danh sách các link nav (ul) */
 .navbar nav ul {
-    list-style: none;
+    list-style: none; /* Bỏ dấu chấm đầu dòng */
     margin: 0;
     padding: 0;
-    display: flex;
+    display: flex; /* Sắp xếp các link (li) nằm ngang */
     align-items: center; 
 }
 
+/* Mỗi mục link (li) */
 .navbar nav li {
-    margin-left: 20px;
+    margin-left: 20px; /* Khoảng cách giữa các mục */
 }
 
+/* Các thẻ link (a) trong nav */
 .navbar nav a {
     text-decoration: none;
-    color: #f4f4f4; 
+    color: #f4f4f4; /* Màu chữ trắng ngà */
     font-weight: bold;
     padding: 5px 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px; /* Bo góc */
+    transition: background-color 0.3s, color 0.3s; /* Hiệu ứng chuyển động mượt */
     display: inline-block; 
 }
 
-/* Hover chung cho TẤT CẢ link trên navbar */
+/* Hiệu ứng khi di chuột (hover) vào link nav */
 .navbar nav a:hover {
-    background-color: #e74c3c; 
-    color: #ffffff;
-    animation: bounce-once 0.6s ease; 
+    background-color: #e74c3c; /* Nền đổi sang đỏ */
+    color: #ffffff; /* Chữ đổi sang trắng */
+    animation: bounce-once 0.6s ease; /* Thêm hiệu ứng nảy */
 }
 
 /* --- STYLE CHO LINK ĐANG "ACTIVE" --- */
+/* (Class này được JavaScript thêm/xóa khi cuộn) */
 .navbar nav a.navbar-active {
     background-color: #e74c3c; /* Nền đỏ */
     color: #ffffff; /* Chữ trắng */
@@ -133,17 +151,18 @@ section::before {
 
 /* --- NÚT TẢI CV TRÊN NAVBAR --- */
 .navbar .cv-button {
-    background-color: transparent; 
+    background-color: transparent; /* Nền trong suốt */
     color: #f4f4f4; 
     border: none; 
     padding: 5px 10px; 
 }
 
 
-/* --- NÚT BẤM CHUNG (CALL TO ACTION) --- */
+/* --- NÚT BẤM CHUNG (CALL TO ACTION - CTA) --- */
+/* Áp dụng cho nút "Xem dự án", "Gửi tin nhắn"... */
 .cta-button {
     display: inline-block;
-    background-color: #e74c3c; 
+    background-color: #e74c3c; /* Nền đỏ */
     color: #ffffff;
     padding: 12px 25px;
     text-decoration: none;
@@ -152,98 +171,105 @@ section::before {
     transition: background-color 0.3s; 
 }
 
+/* Hiệu ứng hover cho nút CTA */
 .cta-button:hover {
-    background-color: #c0392b; 
-    animation: bounce-once 0.6s ease; 
+    background-color: #c0392b; /* Màu đỏ đậm hơn */
+    animation: bounce-once 0.6s ease; /* Hiệu ứng nảy */
 }
 
 /* --- 2. PHẦN TRANG CHỦ (HERO) --- */
 .hero {
-    background-color: transparent; 
-    min-height: 80vh; 
+    background-color: transparent; /* Nền trong suốt */
+    min-height: 80vh; /* Chiều cao tối thiểu 80% chiều cao màn hình */
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center; /* Căn giữa nội dung theo chiều dọc */
+    justify-content: center; /* Căn giữa nội dung theo chiều ngang */
     text-align: center;
-    padding-top: 70px; 
+    padding-top: 70px; /* Bù lại phần navbar che mất */
 }
 
 /* Style cho ảnh Avatar */
 .hero-content .avatar {
     width: 200px; 
     height: 200px; 
-    border-radius: 50%; 
-    object-fit: cover; 
-    border: 5px solid #e74c3c; 
+    border-radius: 50%; /* Bo tròn */
+    object-fit: cover; /* Đảm bảo ảnh vừa vặn, không bị méo */
+    border: 5px solid #e74c3c; /* Viền đỏ */
     margin-bottom: 20px; 
-    box-shadow: 0 0 15px rgba(231, 76, 60, 0.7); 
+    box-shadow: 0 0 15px rgba(231, 76, 60, 0.7); /* Đổ bóng màu đỏ mờ */
 }
 
-
+/* Tiêu đề chính "Xin chào..." */
 .hero-content h1 {
     font-size: 3.5em;
     margin-bottom: 10px;
     color: #ffffff;
 }
 
+/* Phụ đề "Front End Deverloper" */
 .hero-content .subtitle {
     font-size: 1.8em;
-    color: #e74c3c; 
-    font-weight: 300;
+    color: #e74c3c; /* Màu đỏ */
+    font-weight: 300; /* Chữ mỏng */
     margin-bottom: 20px;
 }
 
+/* Đoạn mô tả "Một newbie..." */
 .hero-content .description {
     font-size: 1.1em;
-    color: #cccccc; 
-    max-width: 600px;
-    margin: 0 auto 30px auto;
+    color: #cccccc; /* Màu xám nhạt */
+    max-width: 600px; /* Giới hạn chiều rộng */
+    margin: 0 auto 30px auto; /* Căn giữa */
 }
 
-/* --- 3. PHẦN GIỚI THIỆU (ABOUT) - CÓ ẢNH NỀN RIÊNG --- */
+/* --- 3. PHẦN GIỚI THIỆU (ABOUT) --- */
 .about {
+    /* Đặt ảnh nền riêng cho section này */
     background-image: url('2.jpg'); 
     background-size: cover; 
     background-position: center;
-    background-attachment: fixed; 
+    background-attachment: fixed; /* Hiệu ứng Parallax */
 }
+/* Lớp phủ cho section About (đậm hơn 1 chút) */
 .about::before {
-    background-color: rgba(18, 18, 18, 0.85); 
+    background-color: rgba(18, 18, 18, 0.85); /* Đen mờ 85% */
 }
 
-
+/* Wrapper chứa 3 khối (Mục tiêu, Bản thân, Sở thích) */
 .about-content {
-    display: flex;
-    flex-wrap: wrap; 
-    gap: 40px; 
-    text-align: left; 
+    display: flex; /* Dàn ngang */
+    flex-wrap: wrap; /* Cho phép xuống dòng nếu không đủ chỗ */
+    gap: 40px; /* Khoảng cách giữa các khối */
+    text-align: left; /* Căn lề trái cho nội dung bên trong */
 }
 
-/* (Đã thêm .about-self) */
-.about-text, .about-education, .about-self {
-    flex: 1; 
-    min-width: 300px; 
-    background-color: rgba(30, 30, 30, 0.8); 
+/* Định dạng chung cho cả 3 khối: .about-text, .about-self, .about-hobbies */
+.about-text, .about-education, .about-self, .about-hobbies {
+    flex: 1; /* Chia đều không gian */
+    min-width: 300px; /* Chiều rộng tối thiểu trước khi xuống dòng */
+    background-color: rgba(30, 30, 30, 0.8); /* Nền đen mờ 80% */
     padding: 20px;
     border-radius: 8px;
 }
 
-/* (Đã thêm .about-self h3) */
-.about-text h3, .about-education h3, .about-self h3 {
+/* Định dạng chung cho tiêu đề H3 bên trong 3 khối đó */
+.about-text h3, .about-education h3, .about-self h3, .about-hobbies h3 {
     font-size: 1.5em;
-    color: #e74c3c; 
-    border-bottom: 2px solid #444;
+    color: #e74c3c; /* Màu đỏ */
+    border-bottom: 2px solid #444; /* Viền dưới xám đậm */
     padding-bottom: 5px;
     margin-bottom: 15px;
 }
 
+/* (Phần này có vẻ chưa dùng đến, nhưng là style cho mục học vấn) */
 .education-item h4 {
     font-size: 1.2em;
     margin-bottom: 5px;
 }
 
-/* --- 4. PHẦN KỸ NĂNG (SKILLS) - CÓ ẢNH NỀN RIÊNG --- */
+/* --- 4. PHẦN KỸ NĂNG (SKILLS) --- */
 .skills {
+    /* Ảnh nền riêng cho section Kỹ năng */
     background-image: url('3.jpg'); 
     background-size: cover; 
     background-position: center;
@@ -253,46 +279,53 @@ section::before {
     background-color: rgba(18, 18, 18, 0.85);
 }
 
+/* Lưới (Grid) chứa các thẻ kỹ năng */
 .skills-grid {
     display: grid;
+    /* Tự động chia cột, mỗi cột tối thiểu 250px */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    gap: 20px; /* Khoảng cách giữa các thẻ */
     margin-top: 30px;
-    text-align: left;
+    text-align: left; /* Căn trái nội dung trong thẻ */
 }
 
+/* Từng thẻ kỹ năng (HTML, JS, React...) */
 .skill-card {
-    background-color: rgba(40, 40, 40, 0.9); 
+    background-color: rgba(40, 40, 40, 0.9); /* Nền đen mờ */
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s; /* Hiệu ứng mượt */
 }
 
+/* Hiệu ứng khi di chuột vào thẻ kỹ năng */
 .skill-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    transform: translateY(-5px); /* Nhấc thẻ lên 1 chút */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3); /* Tăng đổ bóng */
 }
 
+/* Icon trong thẻ kỹ năng */
 .skill-card i {
     font-size: 2.5em;
-    color: #e74c3c; 
+    color: #e74c3c; /* Màu đỏ */
     margin-bottom: 15px;
 }
 
+/* Tiêu đề trong thẻ kỹ năng */
 .skill-card h3 {
     font-size: 1.3em;
     margin-bottom: 10px;
 }
 
+/* Mô tả trong thẻ kỹ năng */
 .skill-card p {
-    color: #cccccc; 
+    color: #cccccc; /* Màu xám nhạt */
 }
 
 
-/* --- CSS CHO THANH KỸ NĂNG --- */
+/* --- CSS CHO THANH KỸ NĂNG (Skill Bar) --- */
 .skill-bar-container {
-    background-color: #555; 
+    background-color: #555; /* Nền thanh (màu xám) */
     border-radius: 5px;
     height: 10px; 
     margin-top: 25px; 
@@ -300,26 +333,27 @@ section::before {
     width: 100%;
 }
 
+/* Phần trăm thanh kỹ năng (màu đỏ) */
 .skill-bar {
-    background-color: #e74c3c; 
+    background-color: #e74c3c; /* Màu đỏ */
     height: 100%;
     border-radius: 5px;
-    transition: width 0.8s ease-in-out; 
+    transition: width 0.8s ease-in-out; /* Hiệu ứng chạy thanh */
 }
 
+/* Số % (ví dụ: 10%) */
 .skill-percentage {
     position: absolute;
     right: 0; 
-    top: -20px; 
+    top: -20px; /* Nằm phía trên thanh */
     font-size: 0.9em;
     color: #ffffff;
     font-weight: bold;
 }
 
-/* --- 4.5. PHẦN CÔNG CỤ (TOOLS) - (Thêm mới) --- */
+/* --- 4.5. PHẦN CÔNG CỤ (TOOLS) --- */
 .tools {
-    /* Tạm dùng lại ảnh nền của About (2.jpg) để xen kẽ. 
-       Bạn có thể đổi sang ảnh khác (ví dụ: new-bg.jpg) */
+    /* Dùng lại ảnh nền của section About */
     background-image: url('2.jpg'); 
     background-size: cover; 
     background-position: center;
@@ -329,8 +363,9 @@ section::before {
     background-color: rgba(18, 18, 18, 0.85);
 }
 
-/* --- 5. PHẦN DỰ ÁN (PROJECTS) - CÓ ẢNH NỀN RIÊNG --- */
+/* --- 5. PHẦN DỰ ÁN (PROJECTS) --- */
 .projects {
+    /* Ảnh nền riêng cho section Dự án */
     background-image: url('4.jpg'); 
     background-size: cover; 
     background-position: center;
@@ -340,33 +375,38 @@ section::before {
     background-color: rgba(18, 18, 18, 0.85);
 }
 
+/* Lưới chứa các thẻ dự án */
 .project-grid {
     display: grid;
+    /* Tự động chia cột, mỗi cột tối thiểu 320px */
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
     margin-top: 30px;
 }
 
+/* Từng thẻ dự án */
 .project-card {
-    background-color: rgba(40, 40, 40, 0.9); 
+    background-color: rgba(40, 40, 40, 0.9);
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    overflow: hidden; 
+    overflow: hidden; /* Ẩn phần ảnh bị thừa */
     text-align: left;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* Nhấc thẻ lên */
     box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
+/* Ảnh minh họa dự án */
 .project-card img {
     width: 100%;
-    height: 250px;
-    object-fit: cover; 
+    height: 250px; /* Cố định chiều cao ảnh */
+    object-fit: cover; /* Cắt ảnh vừa, không méo */
 }
 
+/* Khối thông tin bên dưới ảnh */
 .project-info {
     padding: 25px;
 }
@@ -381,16 +421,17 @@ section::before {
     color: #cccccc;
 }
 
-/* (CSS CẬP NHẬT CHO DỰ ÁN) */
+/* Tiêu đề phụ (Dự án đã hoàn thành / Dự án tương lai) */
 .projects .project-subtitle {
     font-size: 1.8em;
-    color: #ffffff; /* (Đã đổi thành màu trắng) */
-    text-align: left;
+    color: #ffffff;
+    text-align: left; /* Căn trái */
     margin-top: 40px;
     margin-bottom: 20px;
     border-bottom: 2px solid #444;
     padding-bottom: 5px;
 }
+/* Style cho thanh % của dự án tương lai (nếu có) */
 .project-info .skill-bar-container {
     margin-top: 25px; 
     background-color: #555;
@@ -412,11 +453,11 @@ section::before {
     color: #ffffff;
     font-weight: bold;
 }
-/* (HẾT CSS CẬP NHẬT CHO DỰ ÁN) */
 
 
-/* --- 6. PHẦN LIÊN HỆ (CONTACT) - CÓ ẢNH NỀN RIÊNG --- */
+/* --- 6. PHẦN LIÊN HỆ (CONTACT) --- */
 .contact {
+    /* Ảnh nền riêng cho section Liên hệ */
     background-image: url('5.jpg'); 
     background-size: cover; 
     background-position: center;
@@ -426,6 +467,7 @@ section::before {
     background-color: rgba(18, 18, 18, 0.85);
 }
 
+/* Khối thông tin (Email, SĐT) */
 .contact-info {
     margin: 30px 0;
     font-size: 1.2em;
@@ -435,55 +477,58 @@ section::before {
     margin: 10px 0;
 }
 
-/* Icon lá thư và điện thoại màu trắng */
+/* Icon (lá thư, điện thoại) */
 .contact-info i {
     margin-right: 10px;
-    color: #ffffff; 
+    color: #ffffff; /* Màu trắng */
 }
 
-/* --- 7. FOOTER --- */
+/* --- 7. FOOTER (CHÂN TRANG) --- */
 .footer {
-    background-color: #000000; 
+    background-color: #000000; /* Nền đen tuyền */
     color: #ffffff;
     text-align: center;
     padding: 20px 0;
     margin-top: 0; 
 }
 
-/* --- KEYFRAME CHO HIỆU ỨNG NẢY LÊN --- */
+/* --- KEYFRAME (ĐỊNH NGHĨA ANIMATION) --- */
+/* Định nghĩa animation tên là 'bounce-once' */
 @keyframes bounce-once {
     0%   { transform: translateY(0); }
-    40%  { transform: translateY(-6px); } 
-    60%  { transform: translateY(0px); }  
-    80%  { transform: translateY(-2px); } 
-    100% { transform: translateY(0); }  
+    40%  { transform: translateY(-6px); } /* Nảy lên */
+    60%  { transform: translateY(0px); }  /* Rơi xuống */
+    80%  { transform: translateY(-2px); } /* Nảy nhẹ */
+    100% { transform: translateY(0); }  /* Đứng yên */
 }
 
 /*
---- CSS CHO BỐ CỤC ẢNH VÀ NỘI DUNG (TỪ LẦN TRƯỚC) ---
+--- CSS CHO BỐ CỤC ẢNH VÀ NỘI DUNG ---
+(Áp dụng cho About, Skills, Tools, Projects, Contact)
 */
 
 .section-content-wrapper {
     display: flex;
     flex-wrap: wrap; /* Cho phép xuống dòng trên mobile */
-    align-items: center; /* Căn giữa theo chiều dọc */
-    justify-content: space-between;
-    margin-top: 40px; /* Khoảng cách với H2 */
+    align-items: center; /* Căn giữa các cột theo chiều dọc */
+    justify-content: space-between; /* Đẩy 2 cột ra xa */
+    margin-top: 40px; /* Khoảng cách với tiêu đề H2 */
     text-align: left; /* Ghi đè text-align: center của section */
 }
 
-/* -- Cấu trúc BÊN TRÁI (Ảnh bên trái) -- */
+/* -- Cấu trúc BÊN TRÁI (Ảnh bên trái, chữ bên phải) -- */
 .section-content-wrapper.layout-left {
-    flex-direction: row;
+    flex-direction: row; /* Mặc định */
 }
 
-/* -- Cấu trúc BÊN PHẢI (Ảnh bên phải) -- */
+/* -- Cấu trúc BÊN PHẢI (Ảnh bên phải, chữ bên trái) -- */
 .section-content-wrapper.layout-right {
-    flex-direction: row-reverse;
+    flex-direction: row-reverse; /* Đảo ngược thứ tự 2 cột */
 }
 
+/* Cột chứa ảnh */
 .section-image-container {
-    flex: 1; /* Tự co dãn */
+    flex: 1; /* Chiếm 1 phần */
     min-width: 300px; /* Chiều rộng tối thiểu */
     padding: 0 20px;
     box-sizing: border-box;
@@ -491,82 +536,87 @@ section::before {
 
 .section-image-container img {
     width: 100%;
-    max-height: 450px; /* Giới hạn chiều cao */
-    object-fit: cover; /* Cắt ảnh cho vừa */
+    max-height: 450px; /* Giới hạn chiều cao ảnh */
+    object-fit: cover; /* Cắt ảnh vừa, không méo */
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
+/* Cột chứa nội dung chính (chữ, grid, form...) */
 .section-main-content {
-    flex: 1.5; /* Cho nội dung nhiều không gian hơn ảnh */
+    flex: 1.5; /* Chiếm 1.5 phần (rộng hơn ảnh) */
     min-width: 300px;
     padding: 0 20px;
     box-sizing: border-box;
 }
 
-/* --- CSS CHO RESPONSIVE (TỪ LẦN TRƯỚC) --- */
+/* --- CSS CHO RESPONSIVE (HIỂN THỊ TRÊN DI ĐỘNG) --- */
+/* Áp dụng khi màn hình nhỏ hơn hoặc bằng 768px */
 @media (max-width: 768px) {
+    
+    /* Cho 2 cột (ảnh và nội dung) xếp chồng lên nhau */
     .section-content-wrapper,
     .section-content-wrapper.layout-right {
-        flex-direction: column; /* Xếp chồng lên nhau */
+        flex-direction: column; 
     }
     
+    /* Cột ảnh khi xếp chồng */
     .section-image-container {
-        margin-bottom: 30px; /* Tạo khoảng cách khi xếp chồng */
+        margin-bottom: 30px; /* Tạo khoảng cách với nội dung bên dưới */
         padding: 0;
     }
     
+    /* Cột nội dung khi xếp chồng */
     .section-main-content {
         padding: 0;
-        /* Căn giữa nội dung chính (như text trong contact) khi thu nhỏ */
-        text-align: center; 
+        text-align: center; /* Căn giữa nội dung (ví dụ: text ở Contact) */
     }
     
-    /* Căn trái lại cho các card và grid bên trong */
+    /* Căn lề TRÁI lại cho các phần tử bên trong cột nội dung */
     .skills-grid, 
     .project-card, 
     .about-content, 
     .contact-info,
     .projects .project-subtitle,
-    .contact-form { /* Thêm form vào đây */
+    .contact-form {
         text-align: left;
     }
 
-    /* Căn giữa cho social links trên mobile */
+    /* Căn giữa các icon social ở footer (trên mobile) */
     .social-links {
         text-align: center;
     }
 
-    /* --- CẬP NHẬT RESPONSIVE CHO NAVBAR MỚI --- */
+    /* --- RESPONSIVE CHO NAVBAR (MOBILE) --- */
     .logo-container {
-        /* Cho phép logo và icon xuống dòng nếu không đủ chỗ */
         flex-wrap: wrap;
         justify-content: center; /* Căn giữa logo và icons */
     }
+    /* Xếp chồng Logo-container và Nav */
     .navbar .container {
-        flex-direction: column; /* Xếp chồng logo-container và nav */
+        flex-direction: column; 
     }
     .navbar nav {
-        margin-top: 10px; /* Khoảng cách giữa icons và nav links */
+        margin-top: 10px; /* Khoảng cách giữa icons và các link */
     }
+    /* Cho các link nav xuống dòng nếu không đủ chỗ */
     .navbar nav ul {
-        flex-wrap: wrap; /* Cho phép các link nav xuống dòng */
+        flex-wrap: wrap; 
         justify-content: center;
     }
     .navbar nav li {
-        margin: 5px 10px; /* Giảm margin so với 20px */
+        margin: 5px 10px; /* Giảm khoảng cách các link */
     }
 }
 
-/* --- CSS CẬP NHẬT (TỪ LẦN TRƯỚC) --- 
-*/
+/* --- CSS CẬP NHẬT (FORM & FOOTER) --- */
 
-/* 1. Căn lề cho ảnh ở mục Contact (dời lên trên) */
+/* Căn lề cho ảnh ở mục Contact (cho ảnh dính lên trên) */
 #contact .section-content-wrapper {
     align-items: flex-start; 
 }
 
-/* 2. Style cho Form liên hệ mới */
+/* 2. Style cho Form liên hệ */
 .contact-form {
     margin-top: 30px;
     text-align: left;
@@ -574,17 +624,19 @@ section::before {
 .form-group {
     margin-bottom: 20px;
 }
+/* Các ô input và textarea */
 .contact-form input,
 .contact-form textarea {
     width: 100%;
     padding: 12px;
     border-radius: 5px;
     border: 1px solid #555;
-    background-color: rgba(30, 30, 30, 0.9);
-    color: #f4f4f4;
+    background-color: rgba(30, 30, 30, 0.9); /* Nền đen mờ */
+    color: #f4f4f4; /* Chữ gõ vào màu trắng */
     font-size: 1em;
     box-sizing: border-box; /* Quan trọng để padding không làm vỡ layout */
 }
+/* Chữ mờ (placeholder) */
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
     color: #999;
@@ -599,33 +651,32 @@ section::before {
     margin-top: 15px;
 }
 .footer .social-links a {
-    font-size: 2em; 
-    color: #cccccc;
+    font-size: 2em; /* Icon to hơn */
+    color: #cccccc; /* Màu xám nhạt */
     margin: 0 10px;
     transition: color 0.3s;
     display: inline-block;
 }
 .footer .social-links a:hover {
-    color: #e74c3c; 
-    animation: none; 
+    color: #e74c3c; /* Đổi sang đỏ khi hover */
+    animation: none; /* Bỏ hiệu ứng nảy ở footer */
 }
 
-/* --- CSS CẬP NHẬT MỚI NHẤT (CHO ICON NAVBAR BÊN CẠNH LOGO) ---
-*/
+/* --- CSS CHO ICON NAVBAR BÊN CẠNH LOGO --- */
 
-/* 1. Tạo container cho logo và icons */
+/* 1. Container cho logo và icons */
 .logo-container {
     display: flex;
     align-items: center; /* Căn giữa logo và icons theo chiều dọc */
 }
 
-/* 2. Style cho wrapper của các icon mới */
+/* 2. Wrapper cho các icon social trên navbar */
 .navbar-social-icons {
     display: flex;
     margin-left: 15px; /* Khoảng cách giữa "Duy Đào" và icon đầu tiên */
 }
 
-/* 3. Style cho từng icon link */
+/* 3. Từng icon link */
 .navbar-social-icons a {
     color: #f4f4f4;
     font-size: 1.3em;
@@ -636,13 +687,51 @@ section::before {
     text-decoration: none;
 }
 
-/* 4. Style hover cho icon */
+/* 4. Hover cho icon social trên navbar */
 .navbar-social-icons a:hover {
-    color: #e74c3c;
-    animation: none; /* Bỏ hiệu ứng bounce */
+    color: #e74c3c; /* Đổi sang đỏ */
+    animation: none; /* Bỏ hiệu ứng nảy */
 }
 
-/* 5. Xóa style cũ cho icon (nếu còn) */
+/* 5. (Dự phòng) Xóa style cũ nếu có */
 .navbar nav li.nav-social-icon {
     display: none; 
 }
+
+/* ===== CSS MỚI CHO CON TRỎ CHUỘT ===== */
+
+/* 1. Ẩn con trỏ chuột mặc định của trình duyệt */
+body, a, button, .cta-button {
+    cursor: none;
+}
+
+/* 2. Định dạng cho chấm tròn đỏ (con trỏ tùy chỉnh) */
+.custom-cursor {
+    width: 12px;
+    height: 12px;
+    background-color: #e74c3c; /* Màu đỏ chủ đạo */
+    border-radius: 50%; /* Bo tròn */
+    position: fixed; /* Đi theo màn hình */
+    z-index: 9999; /* Luôn nằm trên cùng */
+    
+    /* Cho phép click "xuyên qua" chấm tròn này */
+    pointer-events: none; 
+    
+    /* Giúp tâm của chấm tròn nằm ngay tại vị trí con trỏ */
+    transform: translate(-50%, -50%);
+    
+    /* Ẩn ban đầu (trước khi di chuột vào trang) */
+    opacity: 0;
+    
+    /* Hiệu ứng mượt khi di chuyển */
+    /* transition: opacity 0.3s, transform 0.05s linear;  */
+    /* (Tạm bỏ transition transform để bám chuột hơn, bạn có thể mở lại nếu muốn mượt) */
+    transition: opacity 0.3s;
+}
+
+/* 3. Hiện con trỏ khi chuột di chuyển trên trang */
+body:hover .custom-cursor {
+    opacity: 1;
+}
+
+/* ===== HẾT CSS MỚI ===== */
